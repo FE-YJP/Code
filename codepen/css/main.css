@@ -1,0 +1,146 @@
+
+  body{
+  background:url("https://raw.githubusercontent.com/xiaobai2233/hello-world/master/309738-106.jpg");
+  background-repeat:no-repeat;
+  background-attachment:fixed;  
+}
+  button{
+    margin:5px;
+  }
+  #demo{
+   
+    padding-left:30px;
+  }
+
+  .header{
+    display:table;
+    width:100%;
+    <!--border:1px solid  rgba(0,0,0,.1);-->
+    border-radius:10px;
+  }
+  
+  .nav-left{
+    float:left;
+    display:inline-block;
+    padding-left:20px;
+    width:50%
+  }
+  .nav-right{
+    float:right;
+    display:inline-block;
+    margin:0 auto;
+    width:50%;
+   display:none;
+  }
+  #nav-bar{
+    list-style:none; 
+  }
+  #nav-bar li{
+    float:left;
+    
+  }
+main{
+  min-width:1200px;
+}
+.well{
+  
+  border-radius:10px;
+  
+}
+.left{
+  display:none; 
+}
+<!-- .xs{
+    display:block;
+  }-->
+.log{
+  
+  <!--border:2px solid rgba(0,0,0,.1);-->
+  margin:0 auto;
+  padding:0;
+  border-radius:10px;
+}
+.left,h1{
+  text-align:center;
+}
+.left .well
+{
+  padding:50px;
+  position:fixed;
+}
+.right .well{
+  
+  position:fixed;
+}
+.right .well ul{
+  list-style:none;
+  margin-top:50px;
+}
+.right .well ul li{
+  display:block;
+  margin:20px;
+}
+.nr{
+  padding-top:30px;
+}
+.item{
+  width:80%;
+  padding:20px;
+  margin:10px auto;
+  
+ 	border: 1px solid rgba(0,0,0,.1);
+  border-radius:20px;
+	box-shadow: 5px 5px 5px  #888;
+}
+.log-bar img{
+  margin:10px;
+  border:1px solid rgba(0,0,0,.1);
+  border-radius:10px;
+}
+#bar{
+  list-style:none;
+ }
+#bar,
+#bar li{
+ margin:0;
+ padding:0;
+}
+#bar li{
+  margin:25px auto;
+}
+#bar li a,
+  .header a,
+  #nav-bar li a,
+  #learn li a{
+  font-weight:600;
+  color:rgba(0,0,0,.5);
+  }
+#bar li a:hover,
+  #nav-bar li a:hover,
+  .header a:hover,
+#learn li a:hover{
+  color:rgba(255,255,255,2);
+}
+
+@media (max-width:768px){
+  .left .well,
+  .right .well{
+   position:relative;
+  }
+  .right .well{
+    display:none;
+  }
+  #learn,
+  {
+    margin:0;
+    padding:0;
+  }
+  #learn li{
+    float:left;
+    padding:0;
+  }
+  .right. .well{
+    
+  }
+ 
+}

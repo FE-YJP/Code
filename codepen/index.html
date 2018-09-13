@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Hello World</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+<body>
+<div class="container main"> 
+  <div class="header">
+ 
+    <a class="nav-left" href="#">Menu
+         <i class="fa fa-home fa-fw" aria-hidden="true"></i> </a>
+     
+      <ul class="nav-right" id="nav-bar">
+        <li class="col-md-3"><a href="#">demo1</a></li>
+        <li class="col-md-3"><a href="#">demo2</a></li>
+        <li class="col-md-3"><a href="#">demo3</a></li>
+        <li class="col-md-3"><a href="http://www.baidu.com">baidu</a></li>
+        </ul>
+   
+  </div>
+    
+   <div class="row ">
+    <div class="col-md-2 left">
+        
+      <div class="well">
+        <div class="log">
+          <h3>一丿小白</h3>
+        </div>
+        <div class="log-bar"><a href="#"><img src="https://raw.githubusercontent.com/xiaobai2233/hello-world/master/%E6%88%91%E7%9A%84%E5%A4%B4%E5%83%8F.jpg" width="100px" height="100px"></a></div>
+        <ul id="bar">
+        <li><a href="http://xiaobai2233.github.io/">My blog</a></li>
+        <li><a href="mailto:550726844@qq.com">Mail to me</a></li>
+        <li><a id="love" href="#">Praise me</a></li>
+        <li><a id="tel" href="#">Call me</a></li>
+        </ul>
+        
+      </div>
+    </div>
+    <div class="col-md-8 control">
+      <div class="well">
+        <h1>Hello World</h1>
+        
+        <div class="item" id="demo">
+           <form>
+          <button type="button" class="btn btn-primary target1 col-md-2">赞<i class="fa fa-thumbs-up"></i></button>
+          <button type="button" class="btn btn-default target2 col-md-2">踩<i class="fa fa-thumbs-down"></i></button>
+          <button type="button" class="btn btn-info target3 col-md-2">提示<i class="fa fa-info-circle"></i></button>
+         <button type="button" class="btn btn-danger target4 col-md-2">删除<i class="fa fa-trash"></i></button>
+          <button type="button" class="btn target5 col-md-2">分享<i class="fa fa-paper-plane"></i></button>
+
+        </form>
+      </div>
+        
+        <div class="item">
+          <a id="bt"><h3>Bootstrap常用</h3></a>
+       <pre> 
+.container-fluid 总框，然后row
+.well这是一个bootstrap行测试背景大小
+.btn 按钮样式
+.btn-block 块级按钮 
+required input必须输入内容
+image-responsive 自适应图片
+btn-primary主要按钮样式 蓝色
+btn-default按钮默认样式
+btn-info 用户点击浅蓝色
+btn-danger 警告按钮
+用含row的div包住col
+.col-md-*中等
+.col-xs-*特别小
+动画库
+//cdn.bootcss.com/animate.css/3.5.2/
+animate.css
+图标库
+//cdn.bootcss.com/font-awesome/4.2.0/
+css/font-awesome.min.css
+</pre>
+        </div>
+      <div class="item ">
+        <a id="jq"><h3>Jquery常用</h3></a>
+          <pre>
+$(document).ready(function( ){ });加载完
+页面后执行
+$(“demo”).css(“color”,” red”);改变
+样式选择类.demo或ID#demo
+$(“demo”).clone( );克隆
+$(“demo”).clone( ).appendTo(“#demo”);
+克隆并移动到某ID后 
+$(“demo”).parent( );选中父级元素
+$(“demo”).text( );获取元素文本内容
+$(“demo”).text(“ “);改变内容
+$(“demo”).html( )；获取元素所有内容
+（包括标签)
+$(“demo”).html("<xmp><h2>hello world</h2></xmp>");改变元素所有内容
+$(“button”).prop(“disabled”,true);
+使按钮不可选中
+$(“demo”).remove( );删除该元素
+$(“demo”).removeClass( );删除该元素
+某CSS
+$(“demo”).appendTo(“#demo”);将选中
+元素移动到某元素中（剪切粘贴)
+$(“demo”).children( );选中子元素
+</pre>
+
+      </div>
+      
+
+      </div>
+    </div>
+    <div class="col-md-2 right">
+      <div class="well">
+        <ul id="learn">
+        <li><a href="#">目标</a></li>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">Javasvript</a></li>
+          <li><a href="#bt">Bootstrap</a></li>
+          <li><a href="#jq">Jquery</a></li>
+          <li><a href="#">Ajax</a></li>
+          <li><a href="#">Node.js</a></li>
+          <li><a href="#">Vue.js</a></li>
+        </ul>
+      </div>
+    </div>
+   </div>  
+  </div>   
+</div>	   
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
