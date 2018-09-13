@@ -1,0 +1,38 @@
+
+.side-bar{
+	position: relative;
+	width: 100%;
+	float: none;
+	
+	
+}
+
+.main{
+	width: 95%;
+	margin: 0 auto;
+	padding: 0px;
+	float: none;
+}
+.article-list{
+	padding: 10px;
+	margin: 0 ;
+	/*border: 1px solid;
+	border-radius: 5px;*/
+	box-shadow:none;
+}
+.side-bar .nav,
+.side-bar .tag-list{
+	text-align: center;
+	display: none;
+}
+
+#checkbox:checked ~ .nav,
+#checkbox:checked ~ .tag-list{
+	display: block;
+}
+#toggle{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: block;
+}
