@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>实验</title>
+		<link href="https://fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" />
+		<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css"> -->
+		<style type="text/css">
+			body,h1{
+					margin: 0;
+					padding: 0;
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: border-box;
+					box-sizing: border-box;
+					
+				}
+				h1,h2{
+					font-family: lobster;
+				}
+				body{
+					background-color: rgba(0,0,0,.2);
+				}
+				a{
+					text-decoration: none;
+					font-family: "microsoft yahei";
+					color: rgba(0,0,0,2);
+					transition: 500ms;
+				}
+				#content{
+					width: 800px;
+					margin: 0 auto;
+					padding: 0;
+				}
+				
+				.box1 ul li a:hover,
+				.footer h2:hover{
+					color: white;
+				}
+				.header,
+				.main,
+				.footer{
+					width:100%;
+					margin: 10px auto;
+				}
+				.header,
+				.footer{
+					background: rgba(0,0,0,.1);
+					height: 50px;
+				}
+				.main{
+					height: 400px;
+				}
+				.main,
+				.box,
+				.box1,
+				.box2,
+				.header,
+				.footer{
+					text-align: center;
+					border-radius:15px ;
+				}
+				.footer h2{
+					margin: 0;
+					padding-top: 10px;
+				}
+
+				.btn {
+				  display: inline-block;
+					border:none;
+					outline: none;
+					background-color: rgba(0,0,0,.0);
+				}
+			
+				.box{
+					width: 60%;
+					height: 100%;
+					margin:0 auto;
+					background-color:rgba(0,0,0,.1);
+					/* background-image: url(../img/309738-106.jpg); */
+					display: inline-block;
+				}
+				.box1{
+					width: 150px;
+					height: 100%;
+					background: rgba(0,0,0,.1);
+					float: left;
+					display: inline-block;
+					
+				}
+				.box2{
+					width: 20%;
+					height: 100%;
+					background: rgba(0,0,0,.1);
+					display: inline-block;
+					float: right;
+					position: relative;
+				}
+				.box1 ul {
+					margin: 10px auto;
+					padding: 10px 0 ;
+					list-style: none;
+				}
+				.box1 ul li{
+					margin: 0;
+					padding: 20px 0;
+				}
+				
+				.jt{
+					display: inline-block;
+					border: 5px solid;
+					border-color: rgba(0,0,0,.5)   transparent transparent ; /* 上,下,左右 */
+					width: 0;
+					
+				}
+			
+				#sj1{
+					border: 10px solid;
+					border-color: transparent  transparent white transparent; /* 上,下,左右 */
+					width: 0;
+					display: inline-block;
+				}
+				#alt{
+					width: 100px;
+					height: 100px;
+					background-color:white ;
+					margin: -5px 0 auto;
+					border: 5px solid white;
+					border-radius: 10px;
+				}
+				#play{
+					display: none;
+					position: absolute;
+					top: 22px;
+					left: 43px;
+					
+				}
+				.sz{
+					display: block;
+					margin: 10px;
+				}
+				#alt a:hover{
+					text-decoration: underline;
+				}
+				.box2 ul{
+					margin: 10;
+					padding: 0;
+					list-style: none;
+				} 
+				.box2 ul li{
+					margin-top:20px;
+				}
+		</style>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var p=$("#play");
+				var a=$("#sj");
+				
+				a.mouseenter(function(){
+						p.slideDown(300);
+					});
+				p.mouseleave(function(){
+					p.slideUp(300);
+				})
+				function sc(){
+					$("body").addClass("animated hinge");
+				}
+				// setInterval(sc,3000);
+	
+			});
+			function sc(){
+				$("body").addClass("animated hinge");
+				function res(){
+					$("body").removeClass("animated hinge");
+				}
+				setTimeout(res,3000);
+			}
+		
+		</script>
+	</head>
+	<body>
+		<div id="content">
+		<div class="header">
+				<h1>This Is Myblog </h1>
+		</div>
+		<div class="main">
+			<div class="box1">
+				<ul>
+					<li><a href="#">item</a></li>
+					<li><a href="#">item</a></li>
+					<li><a href="http://www.baidu.com">item</a></li>
+					<li><a href="#">item</a></li>
+				</ul>
+			</div>
+			<div class="box">
+				<h2>hello world</h2>
+			</div>
+			<div class="box2">
+				<ul>
+					<li>
+						<a>设置</a>
+						<a href="#" id="sj" class="jt"></a>
+					</li>
+				<div id="play">
+					<div id="sj1"></div>
+					<div id="alt">
+					<a class="sz" href="#">个人设置</a>
+					<a class="sz" href="#">账号中心</a>
+					<a class="sz" href="#">退出</a>
+					</div>
+				</div>
+				<li>
+					<a>Demo</a>
+					<a class="jt"></a>
+					
+				</li>
+			</div>
+			<div class="footer">
+				<form>
+					<button class="btn" type="button" onclick="sc()" ><h2>goodbye</h2></button>
+				</form>
+			</div>
+		</div>
+		
+	</div>
+
+	</body>
+</html>
