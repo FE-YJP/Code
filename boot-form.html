@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bootstrap</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css"/>	
+	<style type="text/css">
+		.container-samll{
+			max-width: 600px;
+		}
+		.container-samll h1{
+			text-align: center;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div class="container container-samll">
+	<div class="well">
+	<form>
+		
+		<h1>会员注册</h1>
+		<div class="form-group">
+			<div class="form-group ">
+				<label class="control-label">用户名:</label>
+				<input type="text" placeholder="请输入用户名" class="form-control input-sm" />
+			</div>
+			<div class="form-group ">
+				<label class="control-label">密码:</label>
+				<input type="text" placeholder="请输入6-8位密码" class="form-control input-sm" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label>来自:</label>
+			<select name="" class="form-control">
+				<option value="1">Beijing</option>
+				<option value="1" selected="selected">Shanghai</option>
+				<option value="1">Hongkong</option>
+				<option value="1">Henan</option>
+				<option value="1">Other</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">手机号：</label>
+			<div class="input-group">
+				<div class="input-group-addon"><i class="icon-phone"></i></div>
+				<input type="text" class="form-control input-sm"/>
+				<div class="input-group-addon btn btn-default" id="get">
+					<b>获取验证码</b>
+				</div>
+
+			</div>
+			
+		</div>
+		<div class="form-group">
+			<label class="control-label">请输入验证码:</label>
+			<div class="row">
+				<div class="col-xs-2"><input class="form-control input-sm" type="text"></div>
+				<div class="col-xs-2"><input class="form-control input-sm" type="text"></div>
+				<div class="col-xs-2"><input class="form-control input-sm" type="text"></div>
+				<div class="col-xs-2"><input class="form-control input-sm" type="text"></div>
+				<div class="col-xs-2"><input class="form-control input-sm" type="text"></div>
+				<div class="col-xs-2"><input class="form-control input-sm" type="text"></div>
+			</div>
+		</div>
+		<div class="form-group ">
+			<label class="control-label">充值金额:</label>
+			<div class="input-group">
+				<div class="input-group-addon">￥</div>
+				<input type="text" class="form-control input-sm"/>
+				<div class="input-group-addon btn btn-default" id="money">
+					 <b>充值</b>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-6">
+					<button type="button" class="btn btn-default form-control"><b>注册</b></button>
+				</div>
+				<div class="col-xs-6">
+					<button type="button" class="btn btn-default form-control"><b>登录</b></button>
+				</div>
+			</div>
+		</div>
+		
+	</form>
+	</div>
+	</div>
+</body>
+</html>
