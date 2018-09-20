@@ -1,0 +1,2 @@
+addr,label,attempts,successes,consec successes,failures,consec failures,est rtt,most recent bandwidth estimate,est bandwidth
+128.199.211.242:443,fp-dosgp1-20180918-198 (128.199.211.242:443),2210,1835,23,375,0,739.28689ms,2018-09-20T22:27:36.9737848+08:00,3292
