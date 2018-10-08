@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>carousel</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+		.carousel-indicators li {
+		  display: inline-block;
+		  width: 30px;
+		  height: 8px;
+		  margin: 0px;
+		  text-indent: -999px;
+		  cursor: pointer;
+		  background-color: #000 \9;
+		  background-color: rgba(0, 0, 0, 0.3);
+		  border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: 0;
+		}
+		.carousel-indicators .active {
+		  width: 30px;
+		  height: 8px;
+		  margin: 0;
+		  background-color: rgba(255,255,255,1);
+		}
+		
+	</style>
+	</head>
+  <body>
+		<div class="container">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="well">
+				<div id="carousel_play" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel_play" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel_play" data-slide-to="1"></li>
+						<li data-target="#carousel_play" data-slide-to="2"></li>
+						<li data-target="#carousel_play" data-slide-to="3"></li>
+						<li data-target="#carousel_play" data-slide-to="4"></li>
+					</ol>
+  <!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+					<a href=""><img src="img/310372-106.jpg" alt="..."></a>
+					<div class="carousel-caption">
+						<h1>Hello</h1>
+					</div>
+				</div>
+				<div class="item">
+					<a href=""><img src="img/310376-106.jpg" alt="..."></a>
+					<div class="carousel-caption">
+						<h1>Welcome</h1>
+					</div>
+				</div>
+				<div class="item">
+					<a href=""><img src="img/310378-106.jpg" alt="..."></a>
+					<div class="carousel-caption">
+						<h1>Myworld</h1>
+					</div>
+				</div>
+				<div class="item">
+					<a href=""><img src="img/310376-106.jpg" alt="..."></a>
+					<div class="carousel-caption">
+						<h1>Welcome</h1>
+					</div>
+				</div>
+				<div class="item">
+					<a href=""><img src="img/310378-106.jpg" alt="..."></a>
+					<div class="carousel-caption">
+						<h1>Myworld</h1>
+					</div>
+				</div>
+  </div>   <!-- carousel-inner -->
+  <!-- Controls -->
+				<a class="left carousel-control" href="#carousel_play" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel_play" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+	</div>		<!-- carousel_play -->
+</div>
+</div>
+</div>	
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
