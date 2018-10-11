@@ -18,7 +18,7 @@
 			prevX=e.clientX;
 			prevY=e.clientY;
 			// console.log(e.clientX,e.clientY);
-			this.onmousemove=function(){
+			this.onmousemove=function(e){
 				var e=e||window.event;
 				var newX=e.clientX,
 					newY=e.clientY;
@@ -30,7 +30,7 @@
 					prevY=newY;
 					prevX=newX;
 			}
-			this.onmouseup=function(){
+			this.onmouseup=function(e){
 				var e=e||window.event;
 
 				this.onmousemove=null;
