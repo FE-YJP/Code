@@ -95,6 +95,15 @@
 				dm.append(c);
 				con.append(dm);
 				getdm.val('');
+				var s=document.getElementsByTagName('marquee');
+				for(var i=0;i<s.length;i++){
+					s[i].onmouseover=function(){
+						this.stop();
+					};
+					s[i].onmouseout=function(){
+						this.start();
+					};
+				}
 			}
 			
 		});
