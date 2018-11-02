@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgba(26, 113, 226, 0.2);
+    font-family:'microsoft yahei';
+    font-size: 20px;
+}
+.container{
+    background-color: rgba(0,0,0,.1);
+    margin: 100px auto;
+    height: 300px;
+    width: 500px;
+    display: table;
+    padding: 20px;
+}
+.wrap{
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-align: center;
+    margin: 20px;
+}
+.wrap:after{
+    position: absolute;
+    top: 0;
+    left:150px;
+    content: '';
+    height: 25px;
+    width: 120px;
+    background-color:deeppink;
+    transition:transform .5s ;
+    transform: scale(0);
+    transform-origin: 100% 100%;
+    z-index: -1;
+} 
+.wrap:hover:after{
+    transform: scale(1);
+    transform-origin: 0 0;
+}
+/* .one,.two,.three{
+    position: relative;
+    margin: 10px;
+} */
+.one:after{
+    position: absolute;
+    top:25px;
+    left:150px;
+    content: '';
+    height: 2px;
+    width: 120px;
+    background-color:deeppink;
+    transition:transform .5s ;
+    transform: scalex(0);
+    transform-origin: 100% 0;
+    z-index: -1;
+}
+.one:hover:after{
+    transform: scalex(1);
+    transform-origin: 0 0;
+}
+.two:after{
+    position: absolute;
+    top:0px;
+    left:150px;
+    content: '';
+    width: 0;
+    height: 25px;
+    background-color:deeppink;
+    transition:width .5s ;
+    z-index: -1;
+}
+.two:hover:after{
+    width: 120px;
+}
+.three:after{
+    position: absolute;
+    top:0px;
+    left:150px;
+    content: '';
+    width: 120px;
+    height: 25px;
+    background-color:deeppink;
+    transition:transform .5s ;
+    transform: scale(0);
+    transform-origin: 100% 100%;
+    z-index: -1;
+}
+.three:hover:after{
+    transform: scale(1);
+    transform-origin: 0 100%;
+}
