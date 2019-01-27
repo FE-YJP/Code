@@ -1,0 +1,1418 @@
+js概念
+js是基于对象和事件驱动，并具有安全性能的客户端脚本语言
+由三部分组成
+ECMAscript核心
+DOM（文档对象模型）
+BOM（浏览器对象模型）
+
+编写js
+1.在HTML普通标签中直接写入js代码
+<button type="button" onclick="alert('hello world')" id="btn"></button>
+2.HTML文档中写入代码
+<script type="text/javascript">
+btn.onclick=function(){alert("hello world")}
+</script>
+3.引入外部JS
+<script src="main.js"></script>
+
+变量命名规则
+变量是由数字、字母、下划线（_）和美元符号（$）的一种或者几种组成，且不能以数字开头,严格区分大小写。
+
+关键字
+目前正在使用的具有特定功能的单词
+保留字
+下个版本可能会用的单词
+
+javascript数据类型
+数值number
+      不是数字NaN（不是数字，但是是数值类型）
+字符串string
+布尔值boolean
+未定义undefined
+对象object
+        空null
+        数组Array
+        函数function
+空null
+
+undefined==null
+
+true
+
+
+undefined===null
+
+false
+
+
+null==""
+
+false
+
+1+undefined
+NaN
+
+
+算术运算符，二元运算符，二目运算符
+加+
+减-
+乘*
+除/
+余%取余（模运算）
+0.1+0.2=0.300000000000004;
+自增++
+自减--
+var a=1;
+console.log(a);//1
+console.log(a++);//1
+console.log(a);//2
+console.log(++a);//3
+console.log(a);//3
+console.log(--a);//2
+(--a)==a//true
+(++a)==a//true
+a==(--a)//false
+a==(++a)//false
+(a++)==a//false
+(a--)==a//false
+
+Math.random()随机数0~1
+Math.round()四舍五入
+parseInt()将类型转换为十进制整数
+parsInt("")//NaN
+parseFloat()将类型转换为浮点数
+number.toFixed(2)保留两位小数
+赋值运算符 （左右可用两边的变量相同时）
+= 	
++=
+-=
+*=
+/=
+%=
+字符串运算符
++，+=可以用于链接字符串
+var a="hello ",b="world,c="";
+c=a+b;//c="hello world"
+b+=a;//b="hello world"
+
+比较运算符
+var a=5
+>	a>8//false
+<	a<8//true
+>=	a>=8//false
+<=	a<=8//true
+==等于（值相等）a==5//true
+!=	a!=5//false
+===全等（类型也得相等）a===5//true a==="5"//false
+!==	a!==5//false  a!=="5"//true
+
+数据类型转换
+隐性转换
+10+true//11
+"10"+true//"10true"
+10-""//10
+10-" "//10
+
+强制转换
+Number("10")//10
+Number(true)//1
+Number("")//0
+Number("a")//NaN
+转换成数字类型
+
+String(10)//"10"
+String(true)//"true"
+String(undefined)//"undefined"
+String(null)//"null"
+String(NaN)//"NaN"
+转换成字符串类型
+
+Boolean(1)//true
+Boolean("")//false
+Boolean(" ")//true
+转换乘布尔值（0,null,undefined,NaN,"",为false）
+
+parseInt()转换成十进制整型
+parseInt(“” )//NaN
+parseInt("1a")//1
+parseInt("a1")//NaN
+parseInt(100).toString(2)转换二进制
+parseInt(str,2)//将2进制数转换成10进制
+parseInt(100).toString(16)转换十六进制
+parseFloat()转换成浮点数
+parseFloat("1a")//1
+
+注意：console.log(10+10+"30")//"2030"
+从前往后，先两个数值类型相加，然后与"30"连接字符串
+isNaN函数用于检查其参数是否是非数字值。
+isNaN( )//true
+isNaN(NaN)//true
+isNaN(undefined)//true
+isNaN(null)//false
+isNaN("")//false
+isNaN(" ")//false
+isNaN(Object)//true函数不是数字，所以为true 内部转换Number(Object)为NaN
+
+Math.pow(x,y)//x的y次方
+
+八进制
+071
+在数字前面加个0 默认转换成8进制数字
+
+0x12
+在数字前面加个0x默认转换成16进制数字
+
+计算文本框的加减乘除时候，获取的value为字符串
+1.使用parseInt()或者parseFloat()转换为数值类型
+2.计算结果使用Math.round()四舍五入；
+
+逻辑运算符特殊用法
+10&&20//20
+0&&3//0
+如果运算的第一个操作数为true,则返回第二个操作数,反之则返回第一个操作数
+10||20//10
+0||20//20
+false||10//10
+如果运算的第一个操作数为 true,则返回第一个操作数,反之则返回第二个操作数
+!null//true
+!undefined//true
+!NaN//true
+!""//true
+!" "//false(空格)
+
+
+循环概念
+重复执行相同的代码，得到相同或者不同的结果
+
+循环语法
+while(循环条件){
+    //循环体
+    当条件满足时要执行的代码
+}
+
+var  a=0;//计数器
+while(a<5){ //条件不满足时循环结束
+document.write(1);
+a++;	//循环条件
+}
+
+do{
+//先执行一次
+//然后判断条件是否满足，如果满足，继续执行
+//不满足就跳出循环
+}while(条件);
+
+for(var 初始条件;判断循环条件;当条件满足时候执行的代码){
+循环体
+}
+
+
+break和continue语句
+
+break语句用于跳出循环，switch和循环语句
+break跳出循环后，会继续执行该循环之后的代码（如果有的话）
+break 语句（不带标签引用），只能用在循环或 switch 中。
+通过标签引用，break 语句可用于跳出任何 JavaScript 代码块：
+例子：
+function Break(){
+list:{
+console.log(1);
+console.log(2);
+break list;
+console.log(3);
+console.log(4);
+   }
+console.log(5);
+}
+Break()//1,2,5跳出当前代码块，继续执行之后的代码
+list:{
+	if(true){
+	console.log(1);
+	console.log(2);
+	console.log(3);
+	break list;
+	console.log(4);
+	console.log(5);
+	}
+}//1,2,3
+
+continue语句用于跳过循环的一个迭代
+continue 语句（带有或不带标签引用）只能用在循环中。
+continue语句大部分用于如果出现了指定条件，然后跳过该次循环，可多个
+
+函数概念
+由事件驱动或者被调用时可重复执行的代码块
+
+作用
+增强灵活性，可管理性和可扩展性，减少冗余代码
+
+创建函数3种方法
+1.函数声明
+function Name(	){	}
+2.函数表达式
+var Name=function（）{	}
+3.构造函数
+var Name=new Function(	);
+
+函数命名规则与变量名规则相同
+
+函数执行
+1.事件
+btn.onclick=Name;
+2.调用
+Name(	);
+
+函数的参数
+在定义一个函数时候，小括号里的变量叫形参，在调用一个函数时，小括号里面的值或变量叫实参
+不使用return，函数默认返回值为undefined
+1.有形参，无实参，默认取值undefined;
+function fo(m){
+console.log(m);
+}
+
+fo( );//undefined
+2.形参与实参一 一对应
+function foo(m,n){
+console.log(m+n);
+}
+foo(10);//等于10+undefined//NaN
+
+js引擎预编译和具体执行代码
+1.预编译：从头到位扫描整个JS代码，把声明（变量声明和函数声明都是）提升到当前环境的顶端；
+2.执行：该在哪赋值（运行）就在哪赋值（运行）
+3.函数声明会优先提升到当前环境的最顶端
+
+
+arguments//参数集合，伪对象，类数组
+属性arguments.length//参数的长度
+
+return
+1.函数的返回值
+2.终止函数继续执行
+
+
+
+作用域
+变量或者函数能够访问到的范围
+
+全局作用域
+1.最外层函数 、或者最外层函数之外通过var来声明的变量
+2.window对象的属性和方法具有全局作用域
+3.在函数内不用var定义的变量（不规范）
+
+局部作用域
+1.在函数内部定义的变量或者函数；
+2.在js中ES5语法下，只有在函数内部定义的变量是局部作用域
+
+
+函数内部
+输出优先级
+局部变量>形参>全局
+
+
+递归函数
+在函数内执行函数自身
+经典案例
+1.斐波那契数列
+function fbnq(n){
+	if(n==0){
+	return 0;
+	}
+	if(n==1){
+	return 1;
+	}
+	return fbnq(n-1)+fbnq(n-2);
+}
+console.log(fbnq(20));//输出
+function Fbnq(n){
+	if(n==0){
+		return 0;
+	}
+	if(n==1 || n==2){
+		return 1;
+	}
+	var x=1;
+	var y=1;
+	for(var i=3;i<=n;i++){
+		var z=x+y;
+		x=y;
+		y=z;
+	}
+	return z;
+}
+console.log(Fbnq(20));//输出
+2.计算n的阶乘
+function Jc(n){
+	if(n==1 || n==0){
+	return 1;
+	}
+	return n*Jc(n-1);
+}
+console.log(Jc(4));
+3.最大公约数
+function maxdiv(m,n){
+return m%n==0 ? n : maxdiv(n,m%n)
+
+}
+3.最大公约数
+function maxDiv(m,n){
+         var r=m%n;
+	m=n;
+	n=r;
+	if(r!=0){
+	return maxDiv(m,n);
+	}
+	else{
+	return m;	
+	}
+}
+console.log(maxDiv(319,377));
+最小公倍数是两数字相乘除以最大公约数
+
+构造对象
+var obj=new Object(  );
+var obj={  };
+对象由属性、方法组成；
+访问对象属性的方式
+var person={name:"whh",age:24}
+1.person.name="whh";
+2.person["name"]="whh"
+
+
+数组
+有序的值的集合
+
+数组创建方式
+1.字面量
+var arr=[1,2,3];
+2.构造函数的方式
+var arr1=new Array()
+当参数为1个数时，表示数组中元素的个数
+当参数为多个时，表示数组中的元素
+
+数组操作方法
+
+测试方法从三个方面，传参，返回值，对原对象的改变
+arr.push();
+1.返回值为数组的元素的个数，
+2.增加参数，在数组末尾追加参数（元素）
+3.原数组改变
+arr.pop()
+1.从数组末尾删除一个元素
+2.返回删除的元素,不接受参数
+3.原数组发生改变
+arr.unshift()
+1.返回值为数组的元素的个数，
+2.增加参数，在数组头部追加参数（元素）
+3.原数组改变
+arr.shift()
+1.从数组头部删除一个元素
+2.返回删除的元素，不接受参数
+3.原数组发生改变
+
+截取数组方法
+arr.slice(m,n)
+1.截取数组中的元素
+无参数，从头截取到尾部
+一个参数，从m（对应的数组索引）开始截取到最后
+两个参数，从m开始到n结束，不包括n对应的数组的值
+2.返回截取的新数组
+3.原数组不变
+
+arr.splice（）
+1.原数组改变
+2. 无参数 返回空数组 
+3.1个参数 从该参数表示索引开始截到尾, 两个参数，第一个参数表示截取的起始位，第二个参数表示截取的个数，第3个及以后的参数 会从截取位置增加到原数组当中
+
+arr.reverse();数组元素翻转
+join()将数组转换成字符串，参数为连接符
+concat()链接数组，参数为数组或者元素
+arr.sort(function(a,b){return a - b;return b - a;})//从小到大排序数组元素;
+
+字符串方法
+
+关于js堆栈与拷贝
+1、栈（stack）和堆（heap）
+　　stack为自动分配的内存空间，它由系统自动释放；而heap则是动态分配的内存，大小不定也不会自动释放。　
+
+基本类型传递的是数值，按数值存放，可以直接访问
+undefined,null,boolean,number,string
+
+对于引用类型传递的是地址
+变量保存的是一个指针，
+当我们需要访问引用类型（如对象，数组，函数等）的值时，首先从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。
+object,function,array
+
+
+数组的排序
+冒泡和选择
+
+
+[NaN].indexOf(NaN) // -1
+[NaN].lastIndexOf(NaN) // -1
+注意，这两个方法不能用来搜索NaN的位置，即它们无法确定数组成员是否包含NaN。
+这是因为这两个方法内部，使用严格相等运算符（===）进行比较，而NaN是唯一一个不等于自身的值
+
+严格模式：”use strict”
+严格模式的意义
+提高浏览器执行效率
+提高了严谨性
+为之后版本做铺垫
+
+1.变量声明
+必须定义，不定义会报错
+2.禁止使用width(不常用)
+Var obj={a:1,b:2}
+Width(obj){
+Console.log(a,b);
+}//1 2
+3.设立eval作用域
+独立的区域，外面访问不到
+4.函数中this的指向
+谁使用指向谁
+5.删除变量
+严格模式下无法删除变量。只有configurable设置为true的对象属性，才能被删除。
+Var a=10;
+Delate a;//报错
+Console.log(a)
+6.函数参数不能重名
+7.八进制字面量表示法 0o17
+8.Arguments不追踪参数变数（严格模式下，在函数中改变形参的值，不影响arguments接收的实参）
+
+
+ES5新增数组方法
+1.indexOf
+arr.indexOf(item,start)
+		用于返回索引的；
+		1.默认返回值为-1，
+		2.功能：返回指定元素的在数值中第一次出现的索引，没有返回-1
+		第二个参数为开始检索的位置
+		3.不改变原数组
+2.arr.forEach(function(item,index,arr))
+		用于每个元素都执行某个函数
+		数组的每个函数都执行一次回调函数
+		需要返回值用map(),不需要用forEach()
+		1.返回值undefined
+		2.括号内必须为函数（函数作为参数参数）
+		3.函数的第一个参数item 表示数组的元素，第二个参数index表示数组的索引，第三个参数arr，表示数组本身
+		4.不改变原数组
+3.arr.map(function(item,index,arr));
+		返回函数处理过后的数组
+		跟return结合使用最佳
+		1.返回一个新数组
+		数组中的元素为原始数组元素调用函数处理后的值。
+		2.不改变原数组
+4.arr.filter(function(item,index,arr));
+		返回符合条件的元素组成的数组
+		filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
+		1.返回一个新数组
+		2.不改变原数组
+5.arr.some(function(item,index,arr){})
+		some() 方法用于检测数组中的元素是否满足指定条件（函数提供）。
+		some() 方法会依次执行数组的每个元素：
+		1.只要有一个元素满足条件，则表达式返回true , 剩余的元素不会再执行检测。
+		2.如果没有满足条件的元素，则返回false。
+		3.不改变原数组
+6.arr.every(function(item,index,arr){}) 方法用于检测数组所有元素是否都符合指定条件（通过函数提供）。
+		every() 方法使用指定函数检测数组中的所有元素：
+		1.如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素不会再进行检测。
+		2.如果所有元素都满足条件，则返回 true。
+		3.不改变原数组
+7.arr.reduce(function(初始值,item,index,arr){},value)
+1.函数传参，必须初始值
+		 2.value,传递给函数的初始值
+
+
+字符串构建方式
+1.字面量
+str="a";
+2.构建函数方法
+str=new String('"a","b","c"');传一个字符串
+
+
+字符串的方法
+以下方法都不改变原数组
+var str="abcd";
+str.charAt(1)等同于str[1]返回索引对应的字符；
+indexOf（str,start）返回某个指定的字符串值在字符串中首次出现的位置,没有返回-1
+
+str.substring(start,end)返回的子串包括 （开始） 处的字符，但不包括 （结束） 处的字符
+str.substr(star,number)方法可在字符串中抽取从 （开始） 下标开始的指定（数目）的字符
+str.slice(start,end)方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+
+
+str.split("")方法用于把一个字符串按照括号内的字符分割成数组元素并返回该数组。
+若为str.split().则返回数组内为一个元素，该元素即该字符串；
+str.replace(searchStr||RegExp,newStr)用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+
+字符集gb2312 gbk utf-8 utf-16 utf-32
+charCodeAt(index)返回对应字符在ASC2码对应的编码号
+String.fromCharCode(n1,n2,n3)//返回编码表对应的位置的字符string
+
+
+Math方法
+Math.abs()//绝对值
+Math.ceil()向上取整
+Math.floor()向下取整
+Math.round()四舍五入
+Math.PI//3.1415926
+Math.pow(x,y)//x的y次幂
+Math.max(x,y,z...n)//返回最大值max;
+Math.min(x,y,z...n)//返回最小值min;
+Math.sin()//正弦值传参为弧度，即角度*Math.PI/180
+Math.sqrt()//平方根
+
+Date方法
+var nowdate=new Date(1000)//传入数值表示毫秒，返回1970年1月1日零点加1秒
+new Date()
+date.getDate()//1-31
+date.getFullYear()//四位数年份
+date.getMonth()//0-11//0表示一月
+date.getDay()//0-6//0表示周日
+date.getHours()//0-23
+date.getMinutes()//0-59
+date.getSeconds()//0-59
+date.getMilliseconds()//0-999
+date.getTime()//返回 1970 年 1 月 1 日至今的毫秒数 
+
+三元运算符
+（条件）？（为真返回）：（为假返回）
+
+
+BOM和DOM
+
+BOM
+提供了独立于页面内容而与浏览器进行交互的对象，其核心对象是window浏览器代理检测
+navigator.userAgent
+var useragent=navigator.userAgent;
+判断是移动端还是PC（ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod" ）
+
+location对象
+属性：
+用法
+location.href
+URL
+
+属性	描述
+hash	返回一个URL的锚部分
+host	返回一个URL的主机名和端口
+hostname	返回URL的主机名
+href	返回完整的URL
+pathname	返回的URL路径名。
+port	返回一个URL服务器使用的端口号
+protocol	返回一个URL协议
+search	返回一个URL的查询部分
+
+location.方法
+assign()	载入一个新的文档  可以返回旧的页面
+reload()	重新载入当前文档 相当于刷新当前页面
+replace()	用新的文档替换当前文档 改变当前页面
+
+window.open//打开新窗口
+window.open('http://www.baidu.com','_blank','width=200,height=200');
+window.close//关闭窗口
+alert("")
+confirm("")
+prompt("")
+
+history对象
+history对象保存着用户上网的历史记录,从窗口被 打开的那一刻算起.  
+后退一页  history.go(-1)     history.back()   
+前进一页  history.go(1)      history.forward()   
+前进两页  history.go(2) 
+
+window.onresize//浏览器被重置大小时候执行的代码
+window.onscroll//浏览器滚动条改变时候执行的代码
+
+scrollTop：  可视区域距离页面顶部的距离    scrollTop=document.documentElement.scrollTop  || document.body.scrollTop
+scrollLeft:    可视区域距离页面左边的距离    scrollLeft=document.documentElement.scrollLeft  || document.body.scrollLeft
+
+clientWidth：  可视区域的宽度   //包含padding不包含border，不包含滚动条
+document.documentElement.clientWidth
+clientHeight:   可视区域的高度   //包含padding不包含border
+document.documentElement.clientHeight
+
+offsetWidth//包含border可视区域的宽度 
+offsetHeight//包含border
+
+window.innerWidth//
+定时器
+var timer=setInterval(function(){},1000)
+清除定时器
+clearInterval(timer)
+延时器
+var y=setTimeout(function(){},1000)
+清除延时器
+clearTimeout(y)
+
+
+DOM方法
+DOM (Document Object Model) 译为文档对象模型，是 HTML 和 XML 文档的编程接口。
+
+HTML DOM 定义了访问和操作 HTML 文档的标准方法。
+DOM 以树结构表达 HTML 文档。
+
+查询（获取）
+document.getElementById("ID名")//返回ID名对应的一个元素
+document.getElementsByClassName("Class名")//返回文档中所有指定类名的元素集合，作为 NodeList 对象。
+document.getElementsByTagName("标签名")//返回带有指定标签名的对象集合。
+document.getElementsByName("name名")//返回带有指定名称的对象集合。
+
+document.querySelector("")//返回文档中匹配指定的CSS选择器的第一元素
+document.querySelectorAll("")//document.querySelectorAll() 是 HTML5中引入的新方法，返回文档中匹配的CSS选择器的所有元素节点列表
+
+创建节点
+document.createElement("")//创建元素节点
+document.createTextNode("")//创建文本节点
+
+增加节点
+element.appendChild()//为元素添加一个新的子元素
+
+删除节点
+element.removeChild()//移除一个节点的子元素
+
+替换节点
+element.replaceChild(newnode,oldnode)//方法可将某个子节点替换为另一个。
+新节点可以是文本中已存在的，或者是你新创建的。使用已存在的节点替换的时候，原来位置会消失
+
+
+
+其他
+ement.className//返回对应的class名，该属性可修改“类”返回作用于元素，测试可加多个用空格隔开
+
+表格删除整行
+获取当前行的index=tr.rowIndex;
+table.deleteRow(index);
+
+
+获取非行内样式的样式
+element.getComputedStyle(element,null)["样式"]
+element.currentStyle["样式"]  IE
+
+
+属性节点 
+element.attributes、返回元素属性节点集合
+element.getAttribute(“class”)、返回获取的某个属性节点的属性名
+element.setAttribute("属性名","属性值") 方法创建或改变某个新属性。如果指定属性已经存在,则只设置该值。
+element.removeAttribute("要删除的属性的属性名")
+
+
+节点类型nodeType
+元素1  
+属性2
+文本3
+node.nodeType返回对应的节点类型对应的数字
+
+childeNodes返回元素下的所有节点集合
+children返回元素节点集合
+
+outerHTML属性获取描述元素（包括其后代）的序列化HTML片段。它也可以设置为用从给定字符串解析的节点替换元素。
+innerHTML属性设置或返回标签的开始和结束标签之间的 HTML
+
+高级选取firstChild/lastChild/parentNode/previousSibling/nextSibling
+注意，小心获取到#text用下面写法
+注意不要写反
+firstChild\firstElementChild 第一个子节点
+例：oFirst=oUl.firstElementChild || oUl.firstChild  
+lastChild\lastElementChild  最后一个子节点
+例：oLast=oUl.lastElementChild || oUl.lastChild 
+
+
+兄弟节点（有兼容性问题） 
+nextSibling\nextElementSibling下一个节点
+例：oNext=oUl. nextElementSibling || oUl.nextSibling 
+previousSibling\previousElementSibling  上一个节点           
+例：oPrevious=oUl. previousElementSibling || oUl. previousSibling
+
+
+box.insertBefore(newNode, existNode)//在某节点之前插入节点
+文档碎片documentFragment 
+document.createDocumentFragment()
+
+offsetWidth/offsetHeight包括border的宽度
+offsetLeft/offsetTop//当前DOM对象左边距离定位父级左边、上边的距离
+oBox.offsetParent//定位父级
+
+事件
+事件是由访问web页面的用户引起的一系列操作
+当用户执行某些操作的时候执行的一系列代码
+事件类型为鼠标事件、键盘事件、HTML事件
+所有事件处理函数都会由两个部分组成，on+事件名称+函数体
+鼠标事件
+onclick:用户单击按钮或按下回车键时触发
+ondblclick:当用户双击主鼠标按钮时触发
+onmousedown:当用户按下鼠标还未弹起时触发
+onmouseup：当用户释放鼠标按钮时触发
+onmouseover：当鼠标移到某个元素上方时触发
+onmouseout：当鼠标移出某个元素上方时触发
+onmousemove：当鼠标指针在元素上移动时触发
+
+HTML 事件onload：当页面或者资源完全加载后在 window 上面触发，或当框架集加载完毕后在框架集上触发。注意（img资源，会比代码加载的慢一些）
+onselect：当用户选择文本框(input 或 textarea)中的一个或多个字符触发onchange：当文本框(input 或 textarea)内容改变且失去焦点后触发onfocus：当页面或者元素获得焦点时在 window 及相关元素上面触发	onblur：当页面或元素失去焦点时在 window 及相关元素上触发
+onsubmit：当用户点击提交按钮在<form>元素上触发
+onreset：当用户点击重置按钮在<form>元素上触发onresize：当窗口或框架的大小变化时在 window 或框架上触发
+onscroll：当用户滚动带滚动条的元素时触发
+事件对象
+当触发某个事件时，会产生一个事件对象，这个对象包含着所有与事件有关的信息 。包括导致事件的元素、事件的类型、以及其它与特定事件相关的信息。通过事件绑定的执行函数是可以得到一个隐藏参数的 。说明，浏览器会自动分配一个参数，这个参数其实就是 event 对象。Event对象获取方式	
+从参数获取，如onclick=function(e){console.log(e)}
+获取事件对象的方式IE(window.event)
+兼容写法
+element.onclick=function(e){var evt= e || event}
+event.button属性 
+当前事件触发时哪个鼠标按键被点击
+clientX、clientY属性  
+鼠标在可视区X坐标和Y坐标，即距离左边框和上边框的距离
+screenX、screenY属性  
+鼠标在屏幕区X坐标和Y坐标，即距离左屏幕和上屏幕的距离
+offsetX、offsetY属性  
+鼠标相对于事件源的X坐标和Y坐标（左上角（不包括border）（0,0））
+pageX、pageY  
+鼠标相对于文档的X坐标和Y坐标
+
+键盘事件keyup、keydown、keypresson
+keydown：当用户按下键盘上任意键触发，如果按住不放，会重复触发
+onkeypress：当用户按下键盘上的字符键触发，如果按住不放，会重复触发
+onkeyup：当用户释放键盘上的键触发
+组合键ctrlkey、altkey、shiftkey
+使用：event.ctrlKey返回true或false
+altKey属性，bool类型，表示发生事件的时候alt键是否被按下
+ctrlKey属性，bool类型，表示发生事件的时候ctrl键是否被按下
+shiftKey属性，bool类型，表示发生事件的时候shift键是否被按下
+keyCode/which兼容
+键盘上对应的码值
+element.onkeydown=funcion(e){var evt= e || event ;}
+事件的冒泡    	
+事件按照从最特定的事件目标到最不特定的事件目标(document对象)的顺序触发
+阻止事件冒泡
+event.stopPropagation();IE低版本不支持
+event.cancelBubble=true;IE低版本写法
+兼容性写法
+if（event.stopPropagation）event.stopPropagation();
+else event.cancelBubble=true;
+
+12-11
+事件
+浏览器的默认行为
+JavaScript事件本身所具有的属性，例如a标签的跳转，Submit按钮的提交，右键菜单，文本框的输入等
+
+阻止默认行为的方式  
+event.preventDefault();  
+event.returnValue = false;  //兼容IE
+return false;
+
+监听事件
+element.addEventListener("event",function,false/true)
+兼容IE低版本
+element.attachEvent("(on)+event",function)
+
+删除监听事件
+element.removeEventListener("event",function)
+兼容IE低版本
+element.detachEvent("(on)+event",function)
+
+触发事件的事件源
+var evt= e || event
+evt.target || evt.srcElement
+
+
+
+自定义右键菜单
+document.oncontextmenu=function(){
+
+return false//阻止默认右键弹出
+}
+
+
+
+cookie
+通信协议（TCP/IP  HTTP等） 
+计算机通信网络中两台计算机之间进行通信所必须共同遵守的规定或规则。 
+Cookie的作用：
+存储在用户本地终端的数据 
+ISO  国际标准化组织；   OSI 开放系统互联参考模型性；
+七层模型：应用层 表示层 会话层 传输层 网络层 数据链路层 物理层；
+四层模型：应用层  传输层  网络层  网络接口层；
+TCP(传输控制协议)   IP（因特网控制协议）
+HTTP(应用层协议  超文本传输协议) 特点 ：无状态协议；
+IP地址划分等级：
+A类:1.0.0.0~126.255.255.255,默认子网掩码/8,即255.0.0.0 (其中127.0.0.0~127.255.255.255为环回地址,用于本地环回测试等用途)；
+B类:128.0.0.0~191.255.255.255,默认子网掩码/16,即255.255.0.0；
+C类:192.0.0.0~223.255.255.255,默认子网掩码/24,即255.255.255.0；
+D类:224.0.0.0~239.255.255.255,一般于用组播
+E类:240.0.0.0~255.255.255.255(其中255.255.255.255为全网广播地址),E类地址一般用于研究用途..
+三次握手
+cookie的基本操作  增删改查
+增加cookie :
+document.cookie = "productId=10001";
+删除cookie,只需要让该cookie过期：
+var oDate = new Date();
+oDate.setDate(oDate.getDate()-1);
+document.cookie = "age=20;expires="+oDate;
+Expires 字段声明了一个网页或URL地址不再被浏览器缓存的时间，一旦超过了这个时间，浏览器都应该联系原始服务器
+封装成cookie函数
+function setCookie(name,value,n){
+	var oDate=new Date();
+		oDate.setDate(oDate.getDate()+n);
+	document.cookie=name+"="+value+";expires="+oDate;
+}
+function getCookie(name){
+	var str=document.cookie;
+	var arr=str.split("; ");
+	for(var i=0;i<arr.length;i++){
+		var ar=arr[i].split("=");
+		if(ar[0]==name){
+			return ar[1];
+		}
+	}
+}
+function removeCookie(name){
+	setCookie(name,1,-1);
+}
+escape("中文");
+unescape("转码");
+JSON.parse(string)//字符串转为对象
+JSON.stringify(object)//对象转为字符串
+正则表达式
+正则表达式的概念
+是由普通字符及特殊字符（元字符）组成的对字符串进行过滤的逻辑公式
+构建方式
+字面量
+var reg = /abc/;
+构造函数
+var reg1 = new RegExp("abc","i");
+参数一表示字符串，第二个参数为可选，用来修饰正则表达式
+test()是正则表达式的方法
+返回值为布尔值，检测字符串（test参数）中含有某个字符串（正则定义）
+g表示全局匹配
+i表示不区分大小写
+exec()方法返回类数组对象中的index表示匹配的子串在字符串中的位置
+1.正则不是全局匹配模式下，每次从0开始
+2.返回一个类数组，没有匹配到返回null
+可以使用循环取在字符串中最后一次出现的坐标
+
+
+var reg=/a..d/ig;
+var str="aAsadsadsaappd";
+var index=0;
+for(var i=0;i<str.length;i++){
+	if(reg.exec(str)){
+	index=reg.exec(str).index;
+	}
+}
+console.log(index);//10
+
+字符串与正则结合的方法
+字符串的match方法
+将匹配到的结果都放入数组当中，并返回
+var reg=/a..d/;
+var str="asadsadsaappd";
+console.log(str.match(reg));
+//["asad", index: 0, input: "asadsadsaappd", groups: undefined]
+g模式下 var reg=/a..d/g;
+//["asad", "appd"] 
+非g模式下可取index即字符串首次出现的位置str.match(reg).index//0
+字符串的replace方法
+var reg=/abc/g;
+var str="abcdefabc";
+console.log(str.replace(reg,"***"))// ***def***
+字符串的search方法
+用于查找符合正则的子串的位置,只返回第一个匹配的位置
+字符串的split方法
+var str = 'Gaod good study!';
+console.log(str.split(/g..d/i));//[""," ","study!"]
+
+. 元字符，代表除了换行之外的所有单个字符
+n+量词匹配任何包含至少一个n的字符串
+n*匹配任何包含零个或多个n的字符串
+n?匹配任何包含零个或一个n的字符串
+\n匹配换行
+\b单词边界指的是/^\w/之外的字符
+var xs="adsad/sads";
+console.log(xb.test(xs));//例子：s作为单词边界,d作为单词边界
+[ ]表示字符可以出现的范围a-z
+\w 等价于[a-zA-Z0-9_] //字母数字下划线
+\W 非字母数字下划线
+\d 代表数字  等价于[0-9] 
+\D代表非数字
+\D{7,}匹配至少 7个非数字  相当于[^0-9]{7,}  
+/^ 匹配开始  $/ 匹配结尾
+{n}n次
+{n,m}至少n次但是不超过m次
+{n,}至少n次
+贪婪模式,正则默认会尽可能多的匹配
+| 代表或者的意思   匹配其中一种字符串|
+var pattern = /google|baidu|bing|yahoo/; 
+（） 加上小括号  将内容进行分组，可以作为一个整体进行多次匹配
+var pattern = /(google){4,8}/g; //匹配分组里的字符串 4-8次"googlegooglegoogle"
+RegExp.$1//返回第一个（）内匹配的字符
+常用正则表达式	
+检查邮政编码//共 6 位数字，第一位不能为 0
+/^[1-9]\d{5}$/
+检查文件压缩包  //xxx.zip\xxx.gz\xxx.rar
+/^\w+\.(zip|gz|rar)$/ 
+删除多余空格  //
+str.replace(/\s/g,'');
+删除首尾空格
+str.replace(/^\s+/,'');
+str.replace(/\s+$/,'');
+电子邮件( xxxxx @ xxxx(.xxxx)+)
+/^\w+@\w+(\.\w+)+$/
+手机号
+/^1(3|5|7|8)\d{9}$/
+身份证
+/^\d{17}(\d|X)$/
+日期  (xxxx-xx-xx| xxxx/xx/xx | xxxx.xx.xx)
+/^\d{2}|\d{4}[-\/\.]\d{2}[-\/\.]\d{2}$/
+只能输入中文
+str.replace(/[^\u4e00-\u9fa5]/g,'');
+账户名只能使用数字字母下划线，且数字不能开头，长度在6-15之间
+/^[a-zA-Z_]\w{5,14}$/
+
+
+
+babel 安装
+cnpm i babel-preset-es2015 --save-dev
+type nul>.babelrc
+//new-item .babelrc -type file
+//文件写入{"presets":"es2015"}
+使用babel
+babel js/es6.js -o js/es5.js -w
+
+
+
+ES6语法
+Object.freeze(obj)//冻结对象，不可更改，添加，删除
+
+let的使用
+用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。
+存在块级作用域{}
+不存在声明提升(注意考虑暂时性死区)
+不允许重复声明（包括普通变量和函数参数）
+const的使用
+用来声明常量，不要试图改变常量的值，其他语法参照let
+变量的结构
+解构赋值：按照一定模式，从数组和对象中提取值，对变量进行赋值。
+数组：
+let [a,b,c] = [1,2,3];
+默认赋值
+[a,b=2]=[3];
+let c;
+[a=3]=[c];
+对象
+let {a,b} = {a:”aaa”,b:”bbb”};
+let {a:b} = {a:”aaa”};
+let {a, b = 5} = {a: 1};
+Set结构
+一种新的数据结构，类似数组
+var set = new Set([1,2,3,4,4]); //构造函数，值不重复
+[…set] //…扩展运算符，将一个类数组对象转换以逗号分割的序列（数组）
+for  of //遍历可以遍历iterable类型，array,map,set都属于iterable类型,string也能用for of 遍历
+for of不能遍历对象object
+for in与for of遍历数组字符串的时候for in 遍历的为下标，for of 为对应下标的值
+set.size //长度
+set.add(0)
+set.delete(0)
+set.has(0)
+set.clear();
+keys()：返回键名的遍历器for (let item of set.keys()) { console.log(item); }
+values()：返回键值的遍历器
+entries()：返回键值对的遍历器
+forEach()：使用回调函数遍历每个成员set.forEach((value, key) => console.log(value * 2) )
+Map结构
+一种新的数据结构，类似对象
+var map = new Map([["name","john"],["age",30]]);
+map.set(1,1);
+map.size //长度
+map.set(key,value);map.get(key);map.delete(key);map.has(key);map.clear();
+keys()：返回键名的遍历器
+values()：返回键值的遍历器
+entries()：返回键值对的遍历器for (let [key, value] of map.entries()) { console.log(key, value); }
+forEach()：使用回调函数遍历每个成员map.forEach((value, key) => console.log(value * 2) )
+模板字符串：反引号``
+箭头函数（Arrow Function）
+Let foo=()=>{console.log(“foo”)}
+1.   只含一个表达式
+2.   含有多条语句
+3.   this指向问题
+箭头函数中this指向离他最近的作用域的this
+生成器函数
+function* foo(x){
+	yield  x+1;
+	yield  x+2;
+	return  x+3;
+} 
+var f = foo(1);
+fext();
+Symbol:一种新的原始数据类型，主要是为了避免属性名的冲突。
+
+class类
+class Person{
+	constructor(name){
+		this.name = name;
+	}
+	sayHello(){
+		console.log(this.name);
+	}
+}
+
+面向对象编程OOP
+面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种计算机编程架构。
+当我们的构造函数和new一起使用会经历以下四步
+1.创建新对象
+2.改变this指向，指向创建的对象
+3.执行构造函数里的代码
+4.返回创建对象
+
+
+PHP
+超文本预处理器
+课程进度：PHP
+PHP运行以及环境
+LAMP/WAMP
+Linux+Apache+MySQL+PHP
+Window+Apache+MySQL+PHP
+Apache
+一台装有Apache的电脑主机就是一台网络服务器，负责处理客户端请求的数据，并返回客户请求的内容
+使用php输出HTML
+输出ph的方法1.echo 2.print  3.print_r() 4.var_dump()
+1.不带格式的HTML
+<?php
+Echo “hello world”;
+?>
+2.带格式的HTML
+<?php
+Echo “<h1>hello world</h1>”
+?>
+3.使用定界符显示HTML <<<EOD  EOD,用什么开始，就用什么结束，记住分号结尾
+<?php
+echo <<<EOD
+<h1> hello world</h1>
+<p>
+	loremadl
+</p>
+<hr>
+EOD;
+?>
+4.把php嵌入HTML；<?php   ?>
+Php输出两个条件，一是服务器能解析php第二是以。Php结尾
+5.php注释(单行注释)//；（多行注释）/**/
+本天所学知识疑问点（注意问题描述的合理性）
+数据类型
+判断数据类型var_dump（）;
+1、布尔值（true、TRUE）
+2、整型（integer）
+3、浮点型（float）
+4、字符串（string）
+5、数组（array）
+6、对象（object）
+预定义变量
+1.服务器变量$_SERVER,保存头条信息，路径，脚本位置等数组
+想取某个$_SERVER[“PHP_SELF”]；
+2.Cookie变量$_COOKIE,保存cookie值的数组
+var_dump($_COOKIE);
+3.HTTP GET变量$_GET,保存url请求和表单get提交的变量的数组
+获取表单传给后台的数据username,form方法method=“post”;
+var_dump($_POST[“username”])
+4.HTTP POST变量$_POST，保存post方法生成的变量的数组
+5.request变量$_REQUEST,代替$_POST和$_GET方法
+获取user和psw，且php不报错
+foreach(array_keys($_REQUEST) as $items){
+	if($items=="user"){
+		$user=$_REQUEST["user"];
+		var_dump($user);
+	}
+	if($items=="psw"){
+		$psw=$_REQUEST["psw"];
+		var_dump($psw);
+	}
+}
+数组
+数组的创建
+1、不带索引的数组
+$arr2=array("a","b","c");
+$arr2=["a","b","c"];
+2、带索引的数组
+$arr3=array("a"=>"aa","b"=>"bb","c"=>"cc");
+$arr3=["a"=>"aa","b"=>"bb","c"=>"cc"];
+3、二维数组
+$arr2 = [[1,2],[3,4]];
+4、使用变量创建数组compact()    $a = “aaa”;$b = “bbb”; $c=array(1,2);  compact(“a”,”b”,”c”);
+创建数组的变量在括号内无$符号，且用引号引起来
+1.“a”,”b”,”c”在结果中对应key值
+5、使用两个数组创建一个数组$a=array(1,2,3);$b=array(“a”,”b”,”c”); .array_combine($a,$b);
+1.$a的值为key   2.$b的值为value
+6、建立指定范围单元的数组range(start,end,step)
+	$arr7=range(0,20,3);//打印0-20,间隔3
+数组方法
+1.in_array($val,$arr)  判断数组中是否包含某个值，返回布尔值
+$arr7=range(0,20,3);
+var_dump(in_array(3,$arr7));//数组内是否有3；判断的为键值，不能判断键名
+2.取得键名和键值 array_keys($arr)       array_values($arr)数组
+3.移除数组中重复的值,返回去重之后的数组 array_unique($arr)数组
+4.list($a,$b) = $arr;把数组中的值赋给指定的变量
+$aa1=[22,32,43,44];
+list($x,$xy,$zz)=$aa1;
+6.foreach($arr as $val) 遍历数组
+$as=["a","b","c","d"];
+	foreach($as as $s){
+		var_dump($s);//“a”,”b”,”c”,”d”
+	}
+6.计算数组的长度 count($arr)
+7.添加删除 array_push($arr,1,2) array_pop($arr)
+8.统计数组中所有的值出现的次数array_count_values($arr) 	
+类和对象
+类的创建（由变量和函数组成，变量称为属性，函数称为方法）
+对象的创建
+public:可以内部调用，实例调用等。
+protected: 受保护类型，用于本类和继承类调用。
+private: 私有类型，只有在本类中使用。
+
+PHP与JSON
+1.isset($a)判断一个变量是否定义
+2.json_encode($val) 用于对变量进行 JSON 编码，该函数如果执行成功返回 JSON 数据，
+$code=["user"=>"whh","psw"=>"123456"];
+	$_code=json_encode($code);
+	var_dump($_code);//'{"user":"whh","psw":"123456"}
+否则返回 FALSE。 json_encode($students,JSON_UNESCAPED_UNICODE)
+3.json_decode($val,true) 函数用于对 JSON 格式的字符串进行解码，并转换为 PHP 变量。True表示转换成数组，false转换成对象。
+$cd=json_decode($_code,true);//
+/*array (size=2)
+  'user' => string 'whh' (length=3)
+  'psw' => string '123456' (length=6)*/
+$cd=json_decode($_code,false);/*
+object(stdClass)[1]
+  public 'user' => string 'whh' (length=3)
+  public 'psw' => string '123456' (length=6)
+*/
+
+SQL结构化查询语言
+Structured Query Language
+SQL命令
+select从数据库中提取数据
+结果被存储在结果表中，被称为结果集
+select column_name,column_name FROM table_name;//从某表中获取某列和某列
+与
+select * FROM table_name;//从某表中获取所有列
+update更新数据库数据
+delete从数据库中删除数据
+insert into向数据库中插入新数据
+create database创建新数据库
+alter database修改数据库
+create table创建新表
+alter table修改新表
+drop table删除表
+create index创建索引（搜索键）
+drop index删除索引
+MySQL数据库
+MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+PHP结合MySQL
+常用语句
+连接数据库$conn= new mysqli(服务器地址,用户名,密码,数据库名)
+或mysqli_connect(服务器地址,用户名,密码,数据库名)
+$mysql="CREATE DATABASE mydata"//创建数据库
+CREATE TABLE mytable//创建表(登录需要进入数据库)
+SELECT 
+关闭数据库$conn->close()||mysqli_close($conn)
+预处理语句
+预处理语句用于执行多个相同的 SQL 语句，并且执行效率更高
+1.预处理：创建 SQL 语句模板并发送到数据库。预留的值使用参数 "?" 标记 。例如
+$stmt=$conn->prepare("INSERT INTO myguests(firstname,lastname,email) VALUES(?,?,?)");
+/* 该函数绑定了 SQL 的参数，且告诉数据库参数的值。 "sss" 参数列处理其余参数的**数据类型。s 字符告诉数据库该参数为字符串。 
+*i->integer()整型
+*d->double(双精度浮点型)
+*s->string(字符串)
+*b-BLOB(binary large object:二进制大对象)
+*/
+2.数据库解析，编译，对SQL语句模板执行查询优化，并存储结果不输出
+3.执行：最后，将应用绑定的值传递给参数（"?" 标记），数据库执行语句。应用可以多次执行语句，如果参数的值不一样。
+$firstname="Wang";
+$lastname="huahua";
+$email="whh@exmple.com";
+//execute执行
+$stmt->execute();
+相比于直接执行SQL语句，预处理语句有两个主要优点：
+预处理语句大大减少了分析时间，只做了一次查询（虽然语句多次执行）。
+绑定参数减少了服务器带宽，你只需要发送查询的参数，而不是整个语句。
+预处理语句针对SQL注入是非常有用的，因为参数值发送后使用不同的协议，保证了数据的合法性。
+从 MySQL 数据库读取数据
+$selectsome="SELECT column_name(s)（这里写表头列的名字） FROM table_name"（这里写表格的名字）
+我们可以使用 * 号来读取所有数据表中的字段
+$slectall="SELECT * FROM table_name";
+上面为条件
+读取$result=mysql_query(数据库，条件);
+$result=$conn->query($slectall);
+//mysqli_num_rows返回结果集中行的数量：
+$result->num_rows
+//$items=mysqli_fetch_assoc($result)
+$items=$result->fetch_assoc()
+fetch_assoc()从结果集中取得一行作为关联数组,每次取得数组不一样,直到取完
+WHERE子句
+WHERE 子句用于过滤记录。
+WHERE 子句用于提取满足指定标准的的记录。
+$result = mysqli_query($con,"SELECT * FROM Persons
+WHERE FirstName='Peter'");//返回名字为Peter的结果
+UPDATE 语句用于中修改数据库表中的数据。常与where一起使用
+UPDATE 语句用于更新数据库表中已存在的记录。
+$sql="update +表格名字 set+设置符合条件的某条记录 where条件 "
+mysqli_query($con,"UPDATE Persons SET Age=36
+WHERE FirstName='Peter' AND LastName='Griffin'");
+//更新firstname为Peter且lastname为Griffin的age数据
+DELETE 语句用于从数据库表中删除行。
+DELETE FROM 语句用于从数据库表中删除记录。
+insert into 插入数据
+$sql="insert into 表格名字(字段名，。。。)values('数据'，‘数据’。。)"
+alter修改、设置字段
+添加字段
+//alter table +表格名字+add 新增字段名字 字段设置
+$sql="alter table `students` add `reg_data` timestamp not null default current_timestamp after `score`";
+设置字段
+//alter table +表格名字 +需要修改的字段+change+需要修改的字段+设置字段
+$sql="ALTER TABLE `students` CHANGE `name` `name` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL";
+
+连接数据库
+$conn=new mysql("localhost","username","password");
+判断是否连接成功
+if($conn->connect_error){echo $conn->connect_error}
+数据增删改查基本顺序：Server(服务器) -> Database(数据库) ->Table(表) -> Row(行) -> Column(列)1.创建数据库 create database dbname;
+2.创建数据表  use dbname; create table tbname(colName type not null default 0);
+$usertb="create table userdata(
+userid int(20) auto_increment primary key,
+username varchar(20) not null,
+psw varchar(20) not null,
+reg_date timestamp default current_timestamp)";
+$conn->query($usertb)
+进入数据库 $conn->select_db("数据库名字")
+3.增加字段  alter table tbname add colName type;
+4.修改字段  alter table tbname change oldColName newColName type;
+//设置字符集
+charater set utf8 collate utf8_gengeral_ci
+5.删除字段  alter table tbname drop colName;
+增加记录 insert into tbname (colName1,colName2) values(val1,val2);删除记录 delete from tbname[ where colName = value];
+修改记录  update tbname set colName = value;
+查找记录  select * form tbName [ where colName = value];主键：能够唯一标识表中某一行的属性或属性组。一个表只能有一个主键。
+//删除表格 drop table tbname
+Promise对象
+异步编程的解决方案  主要解决回调函数的嵌套 （回调地狱）
+var p=new Promise(function(resolve,reject)){
+//成功resolve（data）//可以传参数
+//失败reject（）
+}
+p.then(function(data){
+
+})//then方法可以接受两个函数作为参数，第一个函数相当于成功时回调，第二个函数相当于失败时回调
+可以链式调用
+例如
+var p1=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve("aa");
+            },1000)
+        });
+        var p2 = new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve("bb");
+                }, 500)
+            });
+        var p3 = new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve("cc");
+                }, 100)
+            });
+        p1.then(function(data){
+            console.log(data);
+            return p2;
+        }).then(function(data){
+            console.log(data);
+            return p3;
+        }).then(function(data){
+            console.log(data);
+        })
+//promise对象内部的三种状态 进行中  完成  拒绝
+//状态改变两种 进行到完成 进行到拒绝
+//一旦状态改变就不会再变
+Promise.all([p1,p2])，参数为Promise实例，返回一个新的Promise实例，如果都完成，此实例状态才为resolve(),有一个reject,此实例状态为reject;
+Promise.race([p1,p2])，此实例状态以最先执行完的p实例状态为准
+
+
+js原型
+每一个构造函数，都有一个原型对象
+//CreateFunction.prototype
+每个原型对象，都有一个指向构造函数本身的指针
+//CreateFunction.prototype.constructor===CreateFunction
+每个实例，都有一个指向原型对象的指针
+//Instance.__proto__===Create.Function.prototype
+
+
+对象的浅拷贝和深拷贝
+浅拷贝
+Object.assign()将多个源对象的可枚举属性复制给目标对象
+第一个参数为目标对象，之后参数为被复制对象，并且里面的对象有相同属性时，后面会覆盖前的属性值
+//属性的配置，可枚举，不可枚举
+Object.defineProperty(obj设置对象,"设置属性名",{
+value:,//设置属性值
+writable:false,//默认false,可读不可写，true可读可写
+enumerable:true,//可枚举，可遍历
+configurable:true//可配置
+})
+深拷贝
+利用递归
+function deepCopy(obj){
+if(Array.isArray(obj)){
+var newobj=[]
+}else{
+var newobj={}
+}
+for(var i in obj){
+if(typeof obj[i]){
+newobj[i]=deepCopy(obj[i])
+}else{
+newobj[i]=obj[i]
+}
+return newobj
+}
+}
+
+function jsoncopy(obj){
+if(Array.isArray(obj)){
+var newobj=[]
+}else{
+var newobj={}
+}
+return newobj=JSON.parse(JSON.stringify(obj));
+}
+
+
+设计模式
+//单例模式
+//组合模式
+//观察者模式
+
+git使用
+git --version
+git init dir新建仓库dir
+git status查看状态No commit yet暂未提交、modified已修改、
+git add . //添加到暂存区跟文件名
+git commit -m//提交并添加描述（后悔药）
+cls//清除命令行window下
+git log //日志，记录git log -p修改的追加到后面q退出查看
+git checkout xxx//穿回历史节点复制前七个字母即可
+git checkout -//回到上一个版本
+三种状态
+modified修改//staged暂存//commit提交
+命令连接可以用&&
+git log --oneline//显示一行
+git tag -a 标签名 -m 备注 //打标签-a就是annotated有注释的
+git tag会把所有标签打印出来
+给历史打上标签则跟上id7位字母即可
+git checkout 标签名//回到打上标签的版本
+git reset --hard HEAD 版本id//版本回退
+git branch 分支名字//创建分支
+git checkout -b //创建并切换到分支
+git log --all --graph   //图形化视图graph图表
+git diff//查看不同内容
+git reflog //所有历史操作
+git merge 分支名字//合并分支
+git remote add  自定义远程仓库名字  地址//添加远程仓库
+git remote //显示远程仓库
+git remote -v//显示详细信息
+git push -u  远程名字 分支名字//上传代码
+git clone 地址//克隆远程仓库

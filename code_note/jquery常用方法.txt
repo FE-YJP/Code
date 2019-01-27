@@ -1,0 +1,20 @@
+$(document).ready(function( ){      });  加载完页面后执行
+$("demo").css("color"," red");   改变样式选择类 .demo  ID #demo
+$("demo").clone( );  克隆
+ $("demo").clone( ).appendTo("#demo");   克隆并移动到某ID后；
+$("demo").parent( );  选中父级元素
+$("demo").text(  );获取元素文本内容
+$("demo").text("    ");改变内容
+$("demo").html(  )；获取元素所有内容（包括标签）
+$("demo").html("<div>hello world</div>");改变元素所有内容
+$("button").prop("disabled",true);使按钮不可选中
+$("demo").remove( );删除该元素
+$("demo").removeClass( );删除该元素某CSS
+$("demo").appendTo("#demo");  将选中元素移动到某元素中（剪切粘贴）
+$("demo").children( );  选中子元素
+
+
+$(".类:nth-child(n)") CSS选择器允许你按照索引顺序(从1开始)选择目标元素的第n个子元素  
+$(".类:odd")记住，此处jQuery里的索引是从0开始的，也就是说第一个元素为:odd 0 
+$(".类:even")此处，even 1其实为第二个元素
+$("body").addClass("animated hinge")

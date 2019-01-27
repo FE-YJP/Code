@@ -1,0 +1,36 @@
+.container-fluid   总框 然后row这是一个bootstrap行测试背景大小well
+.btn 按钮样式
+.btn-block 块级按钮
+required input必须输入内容
+image-responsive 自适应图片
+btn-primary主要按钮样式 蓝色
+btn-default按钮默认样式
+btn-info 用户点击浅蓝色
+btn-danger 警告按钮
+用含row的div包住col
+	.col-md-*中等
+	.col-xs-*特别小
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"/>图标库
+赞<i class="fa fa-thumbs-up"></i>
+踩<i class="fa fa-thumbs-down"></i>    标签 内不填充内容
+提示<i class="fa fa-info-circle"></i>
+删除<i class="fa fa-trash"></i>
+提交按钮（纸飞机）<i class="fa fa-paper-plane"></i>
+表单输入框input 加类form-control
+https://cdn.bootcss.com/animate.css/3.5.2/animate.css   动画库
+按钮不可选
+$("button").prop("disabled",true);
+
+响应式布局
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+一、CSS引入
+例如我们想知道现在的移动设备是不是纵向放置的显示屏，可以这样写：
+<link rel="stylesheet" type="text/css" media="screen and (orientation:portrait)" ;href="style.css">
+(orientation:portrait) 竖屏
+(orientation:landscape) 横屏
+页面宽度小于960的执行指定的样式文件：
+<link rel="stylesheet" type="text/css" media="screen and (max-width:960px)" href="style.css">
+二、CSS内部
+@media screen and (min-width:960px) and (max-width:1200px){
+    body{background:yellow;}
+}上面的这段代码的意思是当页面宽度大于960px小于1200px的时候执行下面的CSS。
