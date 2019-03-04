@@ -1,0 +1,28 @@
+footer {
+    width: 100%;
+    height: 104px;
+    display: flex;
+    justify-content: space-around;
+    flex-shrink: 0;
+}
+
+footer div {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+}
+
+footer div span {
+    color: #aaa;
+}
+
+.icon {
+    font-size: 50px;
+    color: #aaa;
+}
+
+.iconactive {
+    color: #1AA4F1;
+}

@@ -1,0 +1,14 @@
+html,
+body {
+    height: 100%
+}
+
+#out {
+    height: 100%;
+}
+
+#inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
